@@ -3,36 +3,35 @@ name: Build and Verify CustomerSearch Service
 on:
   push:
     branches:
-      - main  # Trigger on pushes to the main branch
+      - main
   pull_request:
     branches:
-      - main  # Trigger on pull requests targeting the main branch
+      - main
 
 jobs:
   build-and-verify:
-    runs-on: ubuntu-latest  # Use the latest Ubuntu environment for the job
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout code  # Step to checkout the code from the repository
+      - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Setup .NET  # Set up .NET SDK for building and running the project
+      - name: Setup .NET
         uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '7.0'  # Specify the .NET version to use, adjust as needed
+          dotnet-version: '7.0'
 
-      - name: Restore dependencies  # Restore project dependencies using dotnet restore
-        run: dotnet restore CustomerSearch/CustomerSearch.csproj  # Specify path to .csproj file
+      # Removed the 'dotnet restore' step
 
-      - name: Build CustomerSearch service  # Build the project in Release configuration
+      - name: Build CustomerSearch service
         run: dotnet build CustomerSearch/CustomerSearch.csproj --configuration Release
 
-      - name: Publish CustomerSearch service  # Publish the project to prepare it for running
+      - name: Publish CustomerSearch service
         run: dotnet publish CustomerSearch/CustomerSearch.csproj -c Release -o ./publish
 
-      - name: Verify service is running  # Start the service and verify that it responds successfully
+      - name: Verify service is running
         run: |
-          dotnet ./publish/CustomerSearch.dll &  # Start the service in the background
-          sleep 10  # Wait 10 seconds to allow the service to start
-          curl -s -o /dev/null -w "%{http_code}" http://localhost:5000/api/customer/search | grep 200  # Check if service responds with HTTP 200 status
-        shell: bash  # Use bash shell to run multiple commands
+          dotnet ./publish/CustomerSearch.dll &
+          sleep 10
+          curl -s -o /dev/null -w "%{http_code}" http://localhost:5000/api/customer/search | grep 200
+        shell: bash
