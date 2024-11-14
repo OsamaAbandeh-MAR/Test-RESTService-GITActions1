@@ -32,8 +32,28 @@ jobs:
 
       - name: Verify service is running  # Start the service and verify that it responds successfully
         run: |
-          Start-Process -NoNewWindow -FilePath "dotnet" -ArgumentList ".\publish\CustomerSearch.dll"
-          Start-Sleep -Seconds 10  # Wait for the service to start
-          $response = Invoke-WebRequest -Uri http://localhost:5000/api/customer/search -UseBasicParsing
-          if ($response.StatusCode -ne 200) { throw "Service did not respond with status 200" }
+          # Start the service in the background
+          Start-Job -ScriptBlock { Start-Process -NoNewWindow -FilePath "dotnet" -ArgumentList ".\publish\CustomerSearch.dll" }
+          Start-Sleep -Seconds 15  # Wait longer to allow the service to start
+
+          # Retry the request multiple times to allow connection
+          $maxRetries = 5
+          $retryCount = 0
+          $success = $false
+          while ($retryCount -lt $maxRetries -and -not $success) {
+              try {
+                  $response = Invoke-WebRequest -Uri http://localhost:5000/api/customer/search -UseBasicParsing
+                  if ($response.StatusCode -eq 200) {
+                      Write-Host "Service responded successfully."
+                      $success = $true
+                  }
+              } catch {
+                  Write-Host "Attempt $($retryCount + 1): Service not reachable. Retrying..."
+                  Start-Sleep -Seconds 5
+                  $retryCount++
+              }
+          }
+          if (-not $success) {
+              throw "Service did not respond successfully after $maxRetries attempts."
+          }
         shell: pwsh  # Use PowerShell Core for Windows commands
