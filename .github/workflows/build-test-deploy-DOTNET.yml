@@ -23,7 +23,7 @@ jobs:
 
       - name: Restore dependencies for main project  # Restore dependencies for the main project
         run: dotnet restore CustomerSearch/CustomerSearch.csproj
-
+ 
       - name: Restore dependencies for test project  # Restore dependencies for the test project
         run: dotnet restore CustomerSearch.Tests/CustomerSearch.Tests.csproj
 
