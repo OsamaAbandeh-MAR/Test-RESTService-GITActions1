@@ -23,15 +23,15 @@ jobs:
 
       - name: Restore dependencies for main project  # Restore dependencies for the main project
         run: dotnet restore CustomerSearch/CustomerSearch.csproj
- 
+
       - name: Restore dependencies for test project  # Restore dependencies for the test project
-        run: dotnet restore CustomerSearch.Tests/CustomerSearch.Tests.csproj
+        run: dotnet restore CustomerSearch/CustomerSearch.Tests/CustomerSearch.Tests.csproj
 
       - name: Build CustomerSearch service  # Build the project in Release configuration
         run: dotnet build CustomerSearch/CustomerSearch.csproj --configuration Release
 
       - name: Run tests  # Run unit tests to ensure the application works as expected
-        run: dotnet test CustomerSearch.Tests/CustomerSearch.Tests.csproj --no-build --verbosity normal
+        run: dotnet test CustomerSearch/CustomerSearch.Tests/CustomerSearch.Tests.csproj --no-build --verbosity normal
 
       - name: Publish CustomerSearch service  # Publish the project to prepare it for running
         run: dotnet publish CustomerSearch/CustomerSearch.csproj -c Release -o ./publish
