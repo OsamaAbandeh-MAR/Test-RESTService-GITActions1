@@ -75,6 +75,12 @@
             </Array>
           </mxGeometry>
         </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-15" style="edgeStyle=none;curved=1;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;exitX=0.5;exitY=0.5;exitDx=0;exitDy=0;exitPerimeter=0;strokeColor=#E07A5F;fontSize=12;fontColor=#393C56;startSize=8;endSize=8;fillColor=#F2CC8F;" edge="1" parent="1" source="OYMWFf9JatVCHWDvwbyE-14" target="OYMWFf9JatVCHWDvwbyE-2">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-14" value="Actor" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;outlineConnect=0;strokeColor=#E07A5F;fontColor=#393C56;fillColor=#F2CC8F;" vertex="1" parent="1">
+          <mxGeometry x="148" y="225" width="30" height="60" as="geometry" />
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
