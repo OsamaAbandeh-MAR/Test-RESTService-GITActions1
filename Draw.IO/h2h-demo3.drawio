@@ -1,9 +1,80 @@
 <mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/128.0.0.0 Safari/537.36 Edg/128.0.0.0" version="24.8.6">
   <diagram name="Page-1" id="66kdpXjVe0ZpUXVBdYPS">
-    <mxGraphModel>
+    <mxGraphModel dx="1282" dy="625" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
         <mxCell id="0" />
         <mxCell id="1" parent="0" />
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-1" value="Corporate_IB" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="20" y="20" width="150" height="592" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-2" value="Corporate_ERP" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="220" y="20" width="150" height="592" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-3" value="H2H_APIs" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="443" y="20" width="150" height="592" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-4" value="Bank_Backend" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="724" y="20" width="150" height="592" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-5" value="File_Management" style="shape=umlLifeline;perimeter=lifelinePerimeter;whiteSpace=wrap;container=1;dropTarget=0;collapsible=0;recursiveResize=0;outlineConnect=0;portConstraint=eastwest;newEdgeStyle={&quot;edgeStyle&quot;:&quot;elbowEdgeStyle&quot;,&quot;elbow&quot;:&quot;vertical&quot;,&quot;curved&quot;:0,&quot;rounded&quot;:0};size=65;" vertex="1" parent="1">
+          <mxGeometry x="1047" y="20" width="150" height="592" as="geometry" />
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-6" value="Request File Upload (via APIs)" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="OYMWFf9JatVCHWDvwbyE-1" target="OYMWFf9JatVCHWDvwbyE-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="315" y="129" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-7" value="Submit Payment Data" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="OYMWFf9JatVCHWDvwbyE-2" target="OYMWFf9JatVCHWDvwbyE-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="415" y="183" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-8" value="Validate File and Process Data" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="OYMWFf9JatVCHWDvwbyE-3" target="OYMWFf9JatVCHWDvwbyE-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="667" y="237" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-9" value="Manage Files and Process Payments" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="OYMWFf9JatVCHWDvwbyE-4" target="OYMWFf9JatVCHWDvwbyE-5">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="969" y="291" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-10" value="Acknowledgment of Processing" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="OYMWFf9JatVCHWDvwbyE-5" target="OYMWFf9JatVCHWDvwbyE-4">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="972" y="345" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-11" value="Status Update" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="OYMWFf9JatVCHWDvwbyE-4" target="OYMWFf9JatVCHWDvwbyE-3">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="670" y="399" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-12" value="File Status" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="OYMWFf9JatVCHWDvwbyE-3" target="OYMWFf9JatVCHWDvwbyE-1">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="318" y="453" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="OYMWFf9JatVCHWDvwbyE-13" value="Payment Status" style="verticalAlign=bottom;edgeStyle=elbowEdgeStyle;elbow=vertical;curved=0;rounded=0;endArrow=block;fontSize=12;startSize=8;endSize=8;" edge="1" parent="1" source="OYMWFf9JatVCHWDvwbyE-3" target="OYMWFf9JatVCHWDvwbyE-2">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="418" y="507" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
       </root>
     </mxGraphModel>
   </diagram>
